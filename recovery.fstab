@@ -1,0 +1,32 @@
+# mount point	fstype	device device2								flags     
+/boot            emmc      /dev/block/platform/soc/1da4000.ufshc/by-name/boot                     flags=backup=1
+/recovery        emmc      /dev/block/platform/soc/1da4000.ufshc/by-name/recovery                 flags=backup=1
+
+/system          ext4      /dev/block/platform/soc/1da4000.ufshc/by-name/system                   
+/vendor          ext4      /dev/block/platform/soc/1da4000.ufshc/by-name/vendor                   
+/odm             ext4      /dev/block/platform/soc/1da4000.ufshc/by-name/odm                      flags=backup=1;display="Odm"
+
+/system_image    emmc      /dev/block/platform/soc/1da4000.ufshc/by-name/system                   flags=backup=1
+/vendor_image    emmc      /dev/block/platform/soc/1da4000.ufshc/by-name/vendor                   flags=backup=1
+/odm_image       emmc      /dev/block/platform/soc/1da4000.ufshc/by-name/odm                      flags=backup=1;flashimg;display="ODM Image"
+
+
+/preload         ext4      /dev/block/platform/soc/1da4000.ufshc/by-name/hidden                   flags=display="Preload"               
+/data            ext4      /dev/block/platform/soc/1da4000.ufshc/by-name/userdata                 flags=encryptable=footer;length=-32768
+/cache           ext4      /dev/block/platform/soc/1da4000.ufshc/by-name/cache					  flags=settingsstorage
+/efs             ext4      /dev/block/platform/soc/1da4000.ufshc/by-name/efs                      flags=backup=1;display="EFS"
+/persist         ext4      /dev/block/platform/soc/1da4000.ufshc/by-name/persist                  flags=backup=0;display="Persist"
+
+#FOTA
+/firmware        vfat      /dev/block/platform/soc/1da4000.ufshc/by-name/apnhlos                  flags=display="Firmware";mounttodecrypt
+/modem           emmc      /dev/block/platform/soc/1da4000.ufshc/by-name/modem                    flags=backup=1;display="Modem";mounttodecrypt
+/dsp             emmc      /dev/block/platform/soc/1da4000.ufshc/by-name/dsp                      flags=backup=1;subpartitionof=/modem
+/misc            emmc      /dev/block/platform/soc/1da4000.ufshc/by-name/misc            		  
+/modemst1        emmc      /dev/block/platform/soc/1da4000.ufshc/by-name/modemst1                 flags=backup=1;subpartitionof=/efs
+/modemst2         emmc     /dev/block/platform/soc/1da4000.ufshc/by-name/modemst2                 flags=backup=1;subpartitionof=/efs
+/efsc            emmc      /dev/block/platform/soc/1da4000.ufshc/by-name/fsc                      flags=backup=1;subpartitionof=/efs
+/efsg            emmc      /dev/block/platform/soc/1da4000.ufshc/by-name/fsg                      flags=backup=1;subpartitionof=/efs
+
+# Removable storage
+/external_sd  vfat  /dev/block/mmcblk0p1 /dev/block/mmcblk0          flags=display="Micro SDcard";storage;wipeingui;removable;encryptable=footer;length=-16384 
+/usb-otg	vfat	/dev/block/sde1 /dev/block/sde						flags=display="USB-OTG";storage;wipeingui;removable

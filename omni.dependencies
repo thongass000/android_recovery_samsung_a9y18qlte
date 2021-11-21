@@ -1,0 +1,14 @@
+[
+	{
+			"remote":"github",
+        	"repository": "LineageOS/android_hardware_samsung",
+        	"target_path": "hardware/samsung",
+			"revision":"lineage-15.1"
+	},
+	{		
+			"remote":"github"'
+			"repository: "LineageOS/android_vendor_qcom_opensource_cryptfs_hw",
+			"target_path": "vendor/qcom/opensource/cryptfs_hw",
+			"revision":"lineage-15.0"
+	}
+]
