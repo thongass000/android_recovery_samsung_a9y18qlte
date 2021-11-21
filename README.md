@@ -2,7 +2,7 @@
 twrp_android_device_samsung_a9y18qlte
 
 # android 8.1
-manifest used
+Manifest used
 https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni/tree/twrp-8.1
 
 Kernel source:
