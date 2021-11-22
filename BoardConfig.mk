@@ -55,27 +55,17 @@ TARGET_KERNEL_APPEND_DTB := true
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 
 # Image
-BOARD_CUSTOM_BOOTIMG_MK := hardware/samsung/mkbootimg.mk
 BOARD_KERNEL_CMDLINE := console=null androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 sched_enable_hmp=1 sched_enable_power_aware=1 service_locator.enable=1 swiotlb=1 firmware_class.path=/vendor/firmware_mnt/image androidboot.selinux=permissive
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_TAGS_OFFSET := 0x01E00000
 BOARD_RAMDISK_OFFSET := 0x02000000
+BOARD_MKBOOTIMG_ARGS := --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
 
 # Platform
 TARGET_BOARD_PLATFORM := SDM660
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno512
-
-# Partitions (userdata ??)
-BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864 
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 67108864
-#BOARD_SYSTEMIMAGE_PARTITION_SIZE := 4650418176 # footer -16384
-BOARD_SYSTEMIMAGE_PARTITION_TYPE := ext4
-#BOARD_USERDATAIMAGE_PARTITION_SIZE := 58543898624
-BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := ext4
-#BOARD_VENDORIMAGE_PARTITION_SIZE := 788529152
-BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
-BOARD_FLASH_BLOCK_SIZE := 262144
+BOARD_USES_QCOM_HARDWARE := true
 
 # Workaround for error copying vendor files to recovery ramdisk
 TARGET_COPY_OUT_VENDOR := vendor
@@ -99,7 +89,6 @@ BOARD_AVB_ENABLE := false
 #TARGET_CRYPTFS_HW_PATH := "vendor/qcom/opensource/cryptfs_hw"
 #TW_INCLUDE_CRYPTO := true
 #TW_INCLUDE_FBE := true
-#BOARD_USES_QCOM_FBE_DECRYPTION := true
 
 # TWRP
 TW_DEVICE_VERSION := thongass000
