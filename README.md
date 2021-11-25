@@ -1,9 +1,9 @@
 # Samsung Galaxy A9 (2018) SM-A920F device tree for TWRP
-twrp_android_device_samsung_a9y18qlte
+shrp_android_device_samsung_a9y18qlte
 
-# TWRP-9.0
+# SHRP-v3.1
 Manifest used
-https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni/tree/twrp-9.0
+https://github.com/SHRP/manifest/tree/v3_9.0
 
-Kernel source:
-https://github.com/thongass000/twrp_android_kernel_samsung_a9y18qlte
+# How to build
+`cd <source-dir>; . build/envsetup.sh; export ALLOW_MISSING_DEPENDENCIES=true; export LC_ALL=C; mka recoveryimage`
