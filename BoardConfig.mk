@@ -72,15 +72,14 @@ TARGET_RECOVERY_FSTAB := device/samsung/a9y18qlte/recovery.fstab
 
 # System as root
 BOARD_SUPPRESS_SECURE_ERASE := true
+BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 
 # Android Verified Boot
 BOARD_AVB_ENABLE := false
 
 # Crypto
-#TARGET_HW_DISK_ENCRYPTION := true
-#TARGET_CRYPTFS_HW_PATH := "vendor/qcom/opensource/cryptfs_hw"
-#TW_INCLUDE_CRYPTO := true
-#TW_INCLUDE_FBE := true
+PLATFORM_SECURITY_PATCH := 2099-12-31
+PLATFORM_VERSION := 16.1.0
 
 # TWRP
 TW_DEVICE_VERSION := thongass000
