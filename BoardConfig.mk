@@ -80,6 +80,7 @@ TARGET_RECOVERY_FSTAB := device/samsung/a9y18qlte/recovery.fstab
 
 # System as root
 BOARD_SUPPRESS_SECURE_ERASE := true
+BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 
 # Android Verified Boot
 BOARD_AVB_ENABLE := false
@@ -126,6 +127,5 @@ SHRP_EXTERNAL := /external_sd
 SHRP_OTG := /usb_otg
 SHRP_STATUSBAR_RIGHT_PADDING := 20
 SHRP_STATUSBAR_LEFT_PADDING := 20
-SHRP_NO_SAR_AUTOMOUNT := true
 SHRP_EXPRESS := true
 SHRP_EXPRESS_USE_DATA := true
