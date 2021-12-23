@@ -1,2 +1,3 @@
+ro.boot.bootdevice=1da400.ufshc
 sys.usb.controller=a800000.dwc3
 sys.usb.config=mtp

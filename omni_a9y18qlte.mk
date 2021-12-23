@@ -33,11 +33,3 @@ PRODUCT_NAME := omni_a9y18qlte
 PRODUCT_BRAND := samsung
 PRODUCT_MODEL := SM-A920F
 PRODUCT_MANUFACTURER := samsung
-
-## Device identifier. This must come after all inclusions
-PRODUCT_NAME := omni_a9y18qlte
-PRODUCT_DEVICE := a9y18qlte
-PRODUCT_MODEL := SM-A920F
-PRODUCT_BRAND := samsung
-PRODUCT_MANUFACTURER := samsung
-PRODUCT_RELEASE_NAME := a9y18qlte
