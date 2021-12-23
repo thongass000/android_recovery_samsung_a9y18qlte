@@ -29,7 +29,7 @@
 /dev/block/bootdevice/by-name/boot        /boot           emmc        defaults                  recoveryonly
 /dev/block/bootdevice/by-name/recovery    /recovery       emmc        defaults                  recoveryonly
 /dev/block/bootdevice/by-name/system      /system         ext4        defaults                  recoveryonly,wait,verify
-/dev/block/bootdevice/by-name/userdata	/data	ext4	defaults	wait,length=-16384
+/dev/block/bootdevice/by-name/userdata	/data		    ext4	    defaults		      wait,length=-16384
 /dev/block/bootdevice/by-name/cache       /cache          ext4        defaults                  recoveryonly
 /dev/block/mmcblk0p1                      /sdcard         sdfat       defaults                  recoveryonly
 /dev/block/bootdevice/by-name/efs         /efs            ext4        defaults                  recoveryonly

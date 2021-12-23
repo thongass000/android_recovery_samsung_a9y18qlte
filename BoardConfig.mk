@@ -14,6 +14,11 @@
 # limitations under the License.
 #
 
+DEVICE_PATH := device/samsung/a9y18qlte
+
+# Building with minimal manifest
+ALLOW_MISSING_DEPENDENCIES := true
+
 # Bootloader
 BOARD_VENDOR := samsung
 TARGET_SOC := sdm660
@@ -47,7 +52,7 @@ TARGET_NO_BOOTLOADER := true
 #TARGET_KERNEL_CONFIG := a9y18qlte_eur_defconfig
 #TARGET_KERNEL_SOURCE := kernel/samsung/sdm660
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
-TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/Image.gz-dtb
+TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/Image.gz-dtb
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_APPEND_DTB := true
@@ -65,7 +70,7 @@ BOARD_KERNEL_CMDLINE := console=null androidboot.hardware=qcom user_debug=31 msm
 BOARD_MKBOOTIMG_ARGS := --kernel_offset $(BOARD_KERNEL_OFFSET) --ramdisk_offset $(BOARD_RAMDISK_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --tags_offset $(BOARD_KERNEL_TAGS_OFFSET) --second_offset $(BOARD_KERNEL_SECOND_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION) --pagesize $(BOARD_KERNEL_PAGESIZE) --board "SRPQH02B009"
-BOARD_CUSTOM_BOOTIMG_MK := $(LOCAL_PATH)/bootimg.mk
+BOARD_CUSTOM_BOOTIMG_MK := $(DEVICE_PATH)/bootimg.mk
 
 # Platform
 TARGET_BOARD_PLATFORM := sdm660
@@ -81,7 +86,7 @@ BOARD_HAS_LARGE_FILESYSTEM := true
 BOARD_HAS_NO_SELECT_BUTTON := true
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
-TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/etc/twrp.fstab
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/etc/twrp.fstab
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 131072
