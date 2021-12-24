@@ -31,6 +31,5 @@ export FOX_USE_TAR_BINARY=1
 export FOX_USE_SED_BINARY=1
 export FOX_USE_NANO_EDITOR=1
 export FOX_USE_XZ_UTILS=1
-export FOX_USE_SPECIFIC_MAGISK_ZIP="device/samsung/a9y18qlte/Magisk-v23.0.zip"
 
 add_lunch_combo omni_a9y18qlte-eng
