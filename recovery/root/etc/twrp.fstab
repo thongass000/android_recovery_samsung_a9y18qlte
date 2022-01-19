@@ -16,7 +16,7 @@
 /dsp			emmc	/dev/block/bootdevice/by-name/dsp
 /misc			emmc	/dev/block/bootdevice/by-name/misc				flags=display="Misc"
 /persist		ext4	/dev/block/bootdevice/by-name/persist			flags=display="Persist"
-/preload          ext4  /dev/block/bootdevice/by-name/hidden  			flags=display="Preload"    
+/preload          ext4  /dev/block/bootdevice/by-name/hidden  			flags=display="Preload";wipeingui 
 
 # Removable storage
 /external_sd	vfat	/dev/block/mmcblk0p1	/dev/block/mmcblk0		flags=storage;wipeingui;removable
