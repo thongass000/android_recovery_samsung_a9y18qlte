@@ -49,16 +49,13 @@ TARGET_BOOTLOADER_BOARD_NAME := sdm660
 TARGET_NO_BOOTLOADER := true
 
 # Kernel
-#TARGET_KERNEL_CONFIG := a9y18qlte_eur_defconfig
-#TARGET_KERNEL_SOURCE := kernel/samsung/sdm660
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/Image.gz-dtb
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
-TARGET_KERNEL_APPEND_DTB := true
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 
 # Image
+BOARD_CUSTOM_BOOTIMG_MK := hardware/samsung/mkbootimg.mk
 BOARD_BOOT_HEADER_VERSION := 0
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 4096
@@ -69,8 +66,7 @@ BOARD_KERNEL_TAGS_OFFSET := 0x01E00000
 BOARD_KERNEL_CMDLINE := console=null androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 sched_enable_hmp=1 sched_enable_power_aware=1 service_locator.enable=1 swiotlb=1 firmware_class.path=/vendor/firmware_mnt/image androidboot.selinux=permissive
 BOARD_MKBOOTIMG_ARGS := --kernel_offset $(BOARD_KERNEL_OFFSET) --ramdisk_offset $(BOARD_RAMDISK_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --tags_offset $(BOARD_KERNEL_TAGS_OFFSET) --second_offset $(BOARD_KERNEL_SECOND_OFFSET)
-BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION) --pagesize $(BOARD_KERNEL_PAGESIZE) --board "SRPQH02B009"
-BOARD_CUSTOM_BOOTIMG_MK := $(DEVICE_PATH)/bootimg.mk
+BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION) --pagesize $(BOARD_KERNEL_PAGESIZE) --board "SRPRI18A005"
 
 # Platform
 TARGET_BOARD_PLATFORM := sdm660
@@ -100,12 +96,12 @@ BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 
 # Android Verified Boot
 BOARD_AVB_ENABLE := false
+BOARD_BUILD_DISABLED_VBMETAIMAGE := true
 
 # Crypto
 PLATFORM_SECURITY_PATCH := 2099-12-31
 PLATFORM_VERSION := 16.1.0
 TW_INCLUDE_CRYPTO := false
-TW_INCLUDE_CRYPTO_FBE := false
 
 # TWRP
 TW_DEVICE_VERSION := thongass000
@@ -122,9 +118,7 @@ TW_CUSTOM_CPU_TEMP_PATH := "/sys/devices/virtual/thermal/thermal_zone1/temp"
 TW_NO_REBOOT_BOOTLOADER := true
 TW_HAS_DOWNLOAD_MODE := true
 TW_EXCLUDE_SUPERSU := true
-TW_EXCLUDE_TWRPAPP := true
 TWRP_INCLUDE_LOGCAT := true
-TARGET_USES_LOGD := true
 TW_EXTRA_LANGUAGES := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_INCLUDE_NTFS_3G := true
