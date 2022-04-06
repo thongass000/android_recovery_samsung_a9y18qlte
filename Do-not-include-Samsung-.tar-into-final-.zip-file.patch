@@ -1,0 +1,29 @@
+From 00223c8c8a8edc566772b50e77639200da60ce0c Mon Sep 17 00:00:00 2001
+From: thongass000 <tienthong2004@gmail.com>
+Date: Thu, 7 Apr 2022 01:20:26 +0700
+Subject: [PATCH] Do not include Samsung .tar into final .zip file
+
+---
+ OrangeFox.sh | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/OrangeFox.sh b/OrangeFox.sh
+index 6decd0c..0251772 100755
+--- a/OrangeFox.sh
++++ b/OrangeFox.sh
+@@ -412,9 +412,9 @@ local TDT=$(date "+%d %B %Y")
+   $CP -p $RECOVERY_IMAGE ./recovery.img
+   
+   # copy the Samsung .tar file if it exists
+-  if [ -f $RECOVERY_IMAGE".tar" ]; then
+-     $CP -p $RECOVERY_IMAGE".tar" .
+-  fi
++#  if [ -f $RECOVERY_IMAGE".tar" ]; then
++#     $CP -p $RECOVERY_IMAGE".tar" .
++#  fi
+    
+   # copy installer bins and script 
+   $CP -pr $INST_DIR/* .
+-- 
+2.35.1
+
